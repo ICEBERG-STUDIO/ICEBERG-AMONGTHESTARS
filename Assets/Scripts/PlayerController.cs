@@ -1,7 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
@@ -151,6 +150,8 @@ public class PlayerController : MonoBehaviour
         {
             canInteract = true;
             iInteractable = interactable;
+            string textContent = GameManager.GetJsonTextValue("Interaction", true);
+            _interactKeyText.text = textContent;
             ToogleInteractionKeyUiVisibility();
         }
     }
