@@ -1,33 +1,37 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
     #region Variables
 
     [Header("Player Attributes")] [SerializeField]
-    private GameObject mPlayer;
+    private GameObject _player;
 
-    [SerializeField] private float mSpeed = 3.0f;
-    [SerializeField] private float jumpForce = 5f;
-    [SerializeField] private int maxJump = 1;
-    [SerializeField] private float dashForce = 2f;
-    private int JumpNumber = 0;
+    [SerializeField] private float _speed = 3.0f;
+    [SerializeField] private float _jumpForce = 5f;
+    [SerializeField] private int _maxJump = 1;
+    [SerializeField] private float _dashForce = 2f;
+    private int jumpNumber = 0;
     private bool jumpPressed = false;
-
+    
     [Space] [Header("Layers : ")] [SerializeField]
-    public LayerMask groundLayer;
-
-    [SerializeField] public Transform groundCheck;
+    public LayerMask _groundLayer;
+    [SerializeField] public Transform _groundCheck;
     public float groundCheckRadius = 0.2f;
     private bool isGrounded = true;
+    
+    [Space]
+    [Header("External Attributes :")]
+    [SerializeField] private TextMeshProUGUI _interactKeyText;
 
     private Vector2 mMoveVector;
     private Vector2 direction;
     private Rigidbody2D rgbd2D;
+    private bool canInteract;
+    IInteractable iInteractable;
 
     #endregion
 
@@ -49,7 +53,7 @@ public class PlayerController : MonoBehaviour
     {
         Move();
 
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        isGrounded = Physics2D.OverlapCircle(_groundCheck.position, groundCheckRadius, _groundLayer);
         if (jumpPressed && isGrounded)
         {
             Jump();
@@ -57,7 +61,7 @@ public class PlayerController : MonoBehaviour
 
         if (isGrounded)
         {
-            JumpNumber = 0;
+            jumpNumber = 0;
         }
     }
 
@@ -72,14 +76,25 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            if (JumpNumber < maxJump)
+            if (jumpNumber < _maxJump)
             {
                 jumpPressed = true;
-                JumpNumber += 1;
+                jumpNumber += 1;
             }
             else if (context.canceled)
             {
                 jumpPressed = false;
+            }
+        }
+    }
+
+    public void RedInteractInput(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (canInteract)
+            {
+                Interact();
             }
         }
     }
@@ -100,7 +115,7 @@ public class PlayerController : MonoBehaviour
         if (direction.magnitude >= 0.1f)
         {
             // Apply the movement
-            rgbd2D.position += direction * mSpeed;
+            rgbd2D.position += direction * _speed;
 
             //m_Animator.SetBool("isWalkin", true);
         }
@@ -114,12 +129,45 @@ public class PlayerController : MonoBehaviour
     public void Jump()
     {
         // Apply jump force if grounded
-        rgbd2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        rgbd2D.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
         jumpPressed = false;
     }
 
     public void Dash()
     {
-        rgbd2D.position += (direction * dashForce);
+        rgbd2D.position += (direction * _dashForce);
+    }
+
+    public void Interact()
+    {
+        iInteractable.Interact();
+        ToogleInteractionKeyUiVisibility();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.unityLogger.Log(other.name + " is triggered");
+        if (other.TryGetComponent<IInteractable>(out var interactable))
+        {
+            canInteract = true;
+            iInteractable = interactable;
+            ToogleInteractionKeyUiVisibility();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        Debug.unityLogger.Log(other.name + " is triggered");
+        if (other.TryGetComponent<IInteractable>(out var interactable))
+        {
+            canInteract = false;
+            iInteractable = null;
+            _interactKeyText.gameObject.SetActive(false);
+        }
+    }
+
+    private void ToogleInteractionKeyUiVisibility()
+    {
+        _interactKeyText.gameObject.SetActive(!_interactKeyText.gameObject.activeSelf);
     }
 }
