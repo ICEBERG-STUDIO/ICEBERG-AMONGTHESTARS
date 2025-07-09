@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class LocalizationManager
 {
     // Set the locale thanks to the save file
-    public static string Locale = "EN";
+    public static string locale = "EN";
     
     public static string FileNamePrefix = "GameContent_";
     public static string FileExtension = ".json";
@@ -18,20 +18,6 @@ public class LocalizationManager
         controls = control;
     }
     
-    public static void TryGetContentFile()
-    {
-        string fullFileName = FileNamePrefix + Locale.ToLower() + FileExtension;
-        
-        string filePath = Path.Combine(Application.streamingAssetsPath, fullFileName);
-        
-        // Check if the file exist, if it does, get the content
-        if(File.Exists(filePath))
-            ContentFile = filePath;
-        else
-            Debug.LogError($"File {fullFileName} not found");
-        
-    }
-
     /// <summary>
     /// Check if the file exist and if there is a file, try to get the value according to the given key
     /// </summary>
@@ -83,6 +69,21 @@ public class LocalizationManager
             Debug.LogError($"Failed to read localization file: {ex.Message}");
             return null;
         }
+    }
+    
+    
+    public static void TryGetContentFile()
+    {
+        string fullFileName = FileNamePrefix + locale.ToLower() + FileExtension;
+        
+        string filePath = Path.Combine(Application.streamingAssetsPath, fullFileName);
+        
+        // Check if the file exist, if it does, get the content
+        if(File.Exists(filePath))
+            ContentFile = filePath;
+        else
+            Debug.LogError($"File {fullFileName} not found");
+        
     }
     
     public static string GetInteractKey()

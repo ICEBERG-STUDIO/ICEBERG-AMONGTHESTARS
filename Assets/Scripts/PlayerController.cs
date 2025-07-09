@@ -145,7 +145,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.unityLogger.Log(other.name + " is triggered");
         if (other.TryGetComponent<IInteractable>(out var interactable))
         {
             canInteract = true;
@@ -158,7 +157,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.unityLogger.Log(other.name + " is triggered");
         if (other.TryGetComponent<IInteractable>(out var interactable))
         {
             canInteract = false;
