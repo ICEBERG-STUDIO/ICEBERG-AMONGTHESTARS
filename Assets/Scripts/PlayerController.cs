@@ -130,6 +130,8 @@ public class PlayerController : MonoBehaviour
         // Apply jump force if grounded
         rgbd2D.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
         jumpPressed = false;
+        Debug.Log("hjhbj");
+        Instantiate(_sonnarPrefab, _posSonnar.position, Quaternion.identity);
     }
 
     public void Dash()
@@ -171,4 +173,19 @@ public class PlayerController : MonoBehaviour
     {
         _interactKeyText.gameObject.SetActive(!_interactKeyText.gameObject.activeSelf);
     }
+
+    #region Sonnar
+
+    [Space]
+    [Header("Sonnar")]
+    [SerializeField] private GameObject _sonnarPrefab;
+    [SerializeField] private Transform _posSonnar;
+
+
+    public void Sonnar()
+    {
+        Debug.Log("hjhbj");
+        Instantiate(_sonnarPrefab, _posSonnar.position, Quaternion.identity);
+    }
+    #endregion
 }
