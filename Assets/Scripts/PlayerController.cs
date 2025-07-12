@@ -145,6 +145,13 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        //On trigger enter
+        if (other.TryGetComponent<IOnTrigger>(out var enter))
+        {
+            enter.OnEnter();
+        }
+
+        //Interact
         if (other.TryGetComponent<IInteractable>(out var interactable))
         {
             canInteract = true;
@@ -157,6 +164,13 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        //On trigger exit
+        if (other.TryGetComponent<IOnTrigger>(out var exit))
+        {
+            exit.OnExit();
+        }
+
+        //Interact
         if (other.TryGetComponent<IInteractable>(out var interactable))
         {
             canInteract = false;
