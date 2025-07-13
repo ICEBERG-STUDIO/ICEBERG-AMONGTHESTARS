@@ -22,8 +22,7 @@ public class GameManager : MonoBehaviour
         
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
-        // Pass NewControls to the plain C# manager
+        
         LocManager = new LocalizationManager(NewControls);
 
         LoadPlayerData();
