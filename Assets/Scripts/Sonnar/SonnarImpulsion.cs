@@ -4,14 +4,16 @@ public class SonnarImpulsion : MonoBehaviour
 {
     [SerializeField] private float _speedImpulsion = 10f;
     [SerializeField] private float _maxRadius = 20f;
-    private SphereCollider _sphereCollider;
+    private CircleCollider2D _sphereCollider;
     private float _currentRadius;
 
-    [SerializeField] private string _tagSonnar = "PlateformeSonar";
+    [SerializeField] private string _tagSonnar = "PlateformeSonnar";
+
+    [SerializeField] private SonnarVisual _sonnarVisual;
 
     private void Start()
     {
-        _sphereCollider = GetComponent<SphereCollider>();
+        _sphereCollider = GetComponent<CircleCollider2D>();
         _currentRadius = _sphereCollider.radius;
     }
 
@@ -19,6 +21,7 @@ public class SonnarImpulsion : MonoBehaviour
     {
         _currentRadius += _speedImpulsion * Time.deltaTime;
         _sphereCollider.radius = _currentRadius;
+        _sonnarVisual.DrawCircle(_currentRadius);
 
         if ( _sphereCollider.radius >= _maxRadius)
         {
@@ -28,13 +31,14 @@ public class SonnarImpulsion : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("hhbhv");
-        if (collision.gameObject.tag == "PlateformeSonar")
+        Debug.Log("je suis dans un trigger");
+        if (collision.gameObject.tag == "PlateformeSonnar")
         {
-            Debug.Log("hhbhv");
+            Debug.Log("je suis dans le trigger du plateforme sonnar");
             collision.GetComponent<SonnarEffect>()?.ActivateSonnar();
         }
     }
+
 
     private void OnDrawGizmos()
     {

@@ -421,6 +421,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2025647745348887373, guid: 5ad1c605cb6b1dc4cafbb4d6ef0145ad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025647745348887373, guid: 5ad1c605cb6b1dc4cafbb4d6ef0145ad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025647745348887373, guid: 5ad1c605cb6b1dc4cafbb4d6ef0145ad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1768745212}
+    - target: {fileID: 2025647745348887373, guid: 5ad1c605cb6b1dc4cafbb4d6ef0145ad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025647745348887373, guid: 5ad1c605cb6b1dc4cafbb4d6ef0145ad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReadSonnarInput
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025647745348887373, guid: 5ad1c605cb6b1dc4cafbb4d6ef0145ad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025647745348887373, guid: 5ad1c605cb6b1dc4cafbb4d6ef0145ad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4351120071276713152, guid: 5ad1c605cb6b1dc4cafbb4d6ef0145ad, type: 3}
       propertyPath: m_Name
       value: Player
@@ -429,6 +457,10 @@ PrefabInstance:
       propertyPath: _groundCheck
       value: 
       objectReference: {fileID: 575872619}
+    - target: {fileID: 7642288359165329262, guid: 5ad1c605cb6b1dc4cafbb4d6ef0145ad, type: 3}
+      propertyPath: _sonnarPlayer
+      value: 
+      objectReference: {fileID: 1768745208}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -446,8 +478,9 @@ GameObject:
   - component: {fileID: 804167941}
   - component: {fileID: 804167943}
   - component: {fileID: 804167944}
+  - component: {fileID: 804167945}
   m_Layer: 0
-  m_Name: PlateformeSonar
+  m_Name: PlateformeSonnar
   m_TagString: PlateformeSonnar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -537,6 +570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sonnarColor: {r: 0, g: 0, b: 1, a: 1}
   _effectDuration: 2
+  _fadeDuration: 1
 --- !u!61 &804167944
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -583,6 +617,55 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &804167945
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804167940}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1768745208 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6226095145376595384, guid: 5ad1c605cb6b1dc4cafbb4d6ef0145ad, type: 3}
+  m_PrefabInstance: {fileID: 767002469}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a780c80fe6781cb4c9839b9287f200de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1768745212 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7642288359165329262, guid: 5ad1c605cb6b1dc4cafbb4d6ef0145ad, type: 3}
+  m_PrefabInstance: {fileID: 767002469}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ee20410e638b746bba827417d2c51a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6622712378873509734
 PrefabInstance:
   m_ObjectHideFlags: 0

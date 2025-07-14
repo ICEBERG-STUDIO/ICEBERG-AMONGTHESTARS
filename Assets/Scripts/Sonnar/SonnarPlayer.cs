@@ -5,12 +5,8 @@ public class SonnarPlayer : MonoBehaviour
     [SerializeField] private GameObject _sonnarPrefab;
     [SerializeField] private Transform _posSonnar;
 
-    private void Update()
+    public void ActivateSonnar()
     {
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            Debug.Log("hjhbj");
-            Instantiate(_sonnarPrefab, _posSonnar.position, Quaternion.identity);
-        }
+        Instantiate(_sonnarPrefab, _posSonnar.position, Quaternion.identity);
     }
 }
