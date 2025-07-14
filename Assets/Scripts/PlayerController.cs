@@ -106,6 +106,7 @@ public class PlayerController : MonoBehaviour
 
     public void ReadSonnarInput(InputAction.CallbackContext context)
     {
+        Debug.Log(" input");
         if (context.performed)
         {
             Debug.Log("sonnar input");
