@@ -114,6 +114,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void ReadFruitsInput(InputAction.CallbackContext context)
+    {
+        Debug.Log(" input");
+        if (context.performed)
+        {
+            FruitsActivate();
+        }
+    }
+
     #endregion
 
     public void Move()
@@ -192,6 +201,18 @@ public class PlayerController : MonoBehaviour
     public void Sonnar()
     {
         _sonnarPlayer.ActivateSonnar();
+    }
+    #endregion
+
+    #region Fruits
+
+    [Space]
+    [Header("Fruits")]
+    [SerializeField] private Fruits _fruitsPlayer;
+
+    public void FruitsActivate()
+    {
+        _fruitsPlayer.ChangeFuits();
     }
     #endregion
 }

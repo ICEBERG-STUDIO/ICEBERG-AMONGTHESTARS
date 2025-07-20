@@ -23,6 +23,11 @@ public class SonnarEffect : MonoBehaviour
         StartCoroutine(SonnarTouch());
     }
 
+    /// <summary>
+    /// Quand le sonnar à toucher et que ça à était activé alors la plateforme à une opacité de 1 pendant le temps de effectDuration
+    /// puis fait un fondu pour revenir en transparent avec le temps de fadeDuratiotn
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator SonnarTouch()
     {
         _renderer.material.color = _sonnarColor;

@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class SonnarVisual : MonoBehaviour
 {
+    //Pour le rendu visuel du sonnar
     [SerializeField] private LineRenderer _lineRenderer;
 
     [SerializeField] private int _subdivision = 10;
     //[SerializeField] private float _radius = 5f;
 
+    //"dessine un cercle avec le radius donner
     public void DrawCircle(float radius)
 
     {
