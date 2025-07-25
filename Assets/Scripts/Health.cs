@@ -58,7 +58,8 @@ public class Health : MonoBehaviour
 
 public enum STATE
 {
-    ALIVE = 0,
-    DEAD = 1,
+    NONE = 0,
+    ALIVE = 1,
+    DEAD = 2,
 }
 

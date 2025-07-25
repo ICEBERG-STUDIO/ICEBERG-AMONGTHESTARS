@@ -35,7 +35,10 @@ public class AddressableInstantiator : MonoBehaviour, IOnTrigger
     //unload on exit
     public void OnExit()
     {
-        _environment.ReleaseInstance(_instanceReference);
+        if (_instanceReference != null)
+        {
+            _environment.ReleaseInstance(_instanceReference);
+        }
     }
 
     #endregion

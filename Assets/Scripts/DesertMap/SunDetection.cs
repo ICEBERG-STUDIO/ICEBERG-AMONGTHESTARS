@@ -14,7 +14,8 @@ public class SunDetection : MonoBehaviour
 
     Transform _sun;
 
-    bool isSafe;
+    bool isSafe = true ;
+    bool isBurning = false;
 
     private void Awake()
     {
@@ -44,20 +45,24 @@ public class SunDetection : MonoBehaviour
         {
             RaycastHit2D hit = hits[i];
             GameObject gameObject = hit.transform.gameObject;
-            if (gameObject.TryGetComponent<ShadowCaster2D>(out ShadowCaster2D s))
+            if (gameObject.TryGetComponent<ShadowCaster2D>(out ShadowCaster2D s) && (gameObject != this.gameObject))
             {
-                Debug.Log("à l ombre safe " + gameObject);
+                //Debug.Log("à l ombre safe " + gameObject);
                 isSafe = true;
+
                 StopCoroutine("Burn");
+                isBurning = false;
+
                 break;
             }
 
             isSafe = false;
         }
 
-        if (!isSafe)
+        if (!isSafe && !isBurning)
         {
-            Debug.Log("visible");
+            //Debug.Log("visible");
+            isBurning = true;
 
             StartCoroutine("Burn");
         }
@@ -65,10 +70,13 @@ public class SunDetection : MonoBehaviour
 
     private IEnumerator Burn()
     {
-        yield return new WaitForSeconds(_laps);
+        while (!isSafe)
+        {
+            //Debug.Log("je me brule");
+            _health.TakeDamage(_burnDmg);
 
-        Debug.Log("je me brule");
-        _health.TakeDamage(_burnDmg);
+            yield return new WaitForSeconds(_laps);
+        }
     }
 
 
