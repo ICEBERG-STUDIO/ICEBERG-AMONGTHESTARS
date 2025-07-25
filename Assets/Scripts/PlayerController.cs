@@ -26,11 +26,14 @@ public class PlayerController : MonoBehaviour
     [Header("External Attributes :")]
     [SerializeField] private TextMeshProUGUI _interactKeyText;
 
+    [Space]
+    
     private Vector2 mMoveVector;
     private Vector2 direction;
     private Rigidbody2D rgbd2D;
     private bool canInteract;
     IInteractable iInteractable;
+    
 
     #endregion
 
@@ -115,7 +118,8 @@ public class PlayerController : MonoBehaviour
         {
             // Apply the movement
             rgbd2D.position += direction * _speed;
-
+            
+            
             //m_Animator.SetBool("isWalkin", true);
         }
         else
@@ -183,4 +187,5 @@ public class PlayerController : MonoBehaviour
     {
         _interactKeyText.gameObject.SetActive(!_interactKeyText.gameObject.activeSelf);
     }
+    
 }
