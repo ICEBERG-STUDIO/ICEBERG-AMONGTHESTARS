@@ -6,10 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="74d03527-145e-4b5a-9b38-146b816abc7a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AmongTheStars/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AmongTheStars/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Checkpoints/Abysse.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Checkpoints/Abysse.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Checkpoints/Base Arena.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Checkpoints/Base Arena.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NewControls.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NewControls.inputactions" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Dev/Dev-Noam.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Dev/Dev-Noam.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +33,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/IA/AsignDistanceToTargetAction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/IA/LockRotationAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/CheckpointsData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Localization/LocalizationManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PNJ.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.behavior/Runtime/Execution/Nodes/Actions/Blackboard/SetVariableValueAction.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.behavior/Runtime/Execution/Nodes/Actions/Navigation/NavigateToTargetAction.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.behavior/Runtime/Execution/Nodes/Actions/Navigation/PatrolAction.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Runtime/TMP/TMP_PackageResourceImporter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Runtime/UGUI/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Runtime/UGUI/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
@@ -86,10 +94,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="28220">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="28220" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -120,6 +128,11 @@
       <workItem from="1752520622246" duration="1800000" />
       <workItem from="1752676209640" duration="2759000" />
       <workItem from="1752755130813" duration="3369000" />
+      <workItem from="1753454999362" duration="1717000" />
+      <workItem from="1753547567464" duration="5197000" />
+      <workItem from="1753563337917" duration="1325000" />
+      <workItem from="1753564749052" duration="178000" />
+      <workItem from="1753565301581" duration="1446000" />
     </task>
     <servers />
   </component>
@@ -135,5 +148,37 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Library/PackageCache/com.unity.behavior/Runtime/Execution/Nodes/Actions/Navigation/PatrolAction.cs</url>
+          <line>177</line>
+          <properties documentPath="C:\Users\nofla\Documents\IcebergStudio\Games\AmongTheStars\Library\PackageCache\com.unity.behavior\Runtime\Execution\Nodes\Actions\Navigation\PatrolAction.cs" containingFunctionPresentation="Method 'MoveToNextWaypoint'">
+            <startOffsets>
+              <option value="6569" />
+            </startOffsets>
+            <endOffsets>
+              <option value="6643" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Library/PackageCache/com.unity.behavior/Runtime/Execution/Nodes/Actions/Navigation/PatrolAction.cs</url>
+          <line>182</line>
+          <properties documentPath="C:\Users\nofla\Documents\IcebergStudio\Games\AmongTheStars\Library\PackageCache\com.unity.behavior\Runtime\Execution\Nodes\Actions\Navigation\PatrolAction.cs" containingFunctionPresentation="Method 'MoveToNextWaypoint'">
+            <startOffsets>
+              <option value="6823" />
+            </startOffsets>
+            <endOffsets>
+              <option value="6896" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
