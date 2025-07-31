@@ -20,8 +20,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: cdcc6ee0d5980cc41a894205a8116ba4
-    m_Address: Assets/prefabs/LaLuz.prefab
+  - m_GUID: bddd4188c036be7458f8a505c8ea6799
+    m_Address: Assets/prefabs/AddressableObjects/Environments/Forest.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
