@@ -22,20 +22,27 @@ public class AddressableInstantiator : MonoBehaviour, IOnTrigger
             Debug.LogError("Loading Asset Failded)");
     }
 
+    private void OnValidate()
+    {
+        transform.position = Vector3.zero;
+    }
 
     #region OnTrigger Interface
 
     //load on enter
     public void OnEnter()
     {
-        _environment.InstantiateAsync().Completed += OnAddressableLoaded;
+        if (_environment != null)  _environment.InstantiateAsync().Completed += OnAddressableLoaded;
     }
 
 
     //unload on exit
     public void OnExit()
     {
-        _environment.ReleaseInstance(_instanceReference);
+        if (_instanceReference != null && _environment!=null)
+        {
+            _environment.ReleaseInstance(_instanceReference);
+        }
     }
 
     #endregion
