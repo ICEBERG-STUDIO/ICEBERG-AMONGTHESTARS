@@ -1,4 +1,4 @@
-﻿using TMPro;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -112,6 +112,25 @@ public class PlayerController : MonoBehaviour
             Dash();
     }
 
+    public void ReadSonnarInput(InputAction.CallbackContext context)
+    {
+        Debug.Log(" input");
+        if (context.performed)
+        {
+            Debug.Log("sonnar input");
+            Sonnar();
+        }
+    }
+
+    public void ReadFruitsInput(InputAction.CallbackContext context)
+    {
+        Debug.Log(" input");
+        if (context.performed)
+        {
+            FruitsActivate();
+        }
+    }
+
     #endregion
 
     public void Move()
@@ -147,6 +166,13 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        //On trigger enter
+        if (other.TryGetComponent<IOnTrigger>(out var enter))
+        {
+            enter.OnEnter();
+        }
+
+        //Interact
         if (other.TryGetComponent<IInteractable>(out var interactable))
         {
             canInteract = true;
@@ -164,6 +190,13 @@ public class PlayerController : MonoBehaviour
     
     private void OnTriggerExit2D(Collider2D other)
     {
+        //On trigger exit
+        if (other.TryGetComponent<IOnTrigger>(out var exit))
+        {
+            exit.OnExit();
+        }
+
+        //Interact
         if (other.TryGetComponent<IInteractable>(out var interactable))
         {
             canInteract = false;
@@ -181,6 +214,31 @@ public class PlayerController : MonoBehaviour
     {
         _interactKeyText.gameObject.SetActive(!_interactKeyText.gameObject.activeSelf);
     }
+
+    #region Sonnar
+
+    [Space]
+    [Header("Sonnar")]
+    [SerializeField] private SonnarPlayer _sonnarPlayer;
+
+
+    public void Sonnar()
+    {
+        _sonnarPlayer.ActivateSonnar();
+    }
+    #endregion
+
+    #region Fruits
+
+    [Space]
+    [Header("Fruits")]
+    [SerializeField] private Fruits _fruitsPlayer;
+
+    public void FruitsActivate()
+    {
+        _fruitsPlayer.ChangeFuits();
+    }
+    #endregion
     
     private void EnterWater()
     {

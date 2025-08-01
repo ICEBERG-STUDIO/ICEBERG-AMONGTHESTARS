@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Water
-  - Enemy
+  - PlateformeSonnar
+  - AmesDamnees
+  - Sun
   layers:
   - Default
   - TransparentFX
