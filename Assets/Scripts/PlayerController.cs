@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _waterGravityScale = 0.05f;
 
     private int jumpNumber = 0;
-    private bool jumpPressed = false;
+    private bool canJump = true;
+    private bool wasGroundedLastFrame = true;
     private float normalGravity;
     private float normalSpeed;
     private float normalJumpForce;
@@ -61,22 +62,23 @@ public class PlayerController : MonoBehaviour
     {
         Move();
 
-        isGrounded = Physics2D.OverlapCircle(_groundCheck.position, groundCheckRadius, _groundLayer);
-        if (jumpPressed && isGrounded)
-        {
-            Jump();
-        }
-
-        if (isGrounded)
+        // Ground check
+        bool isCurrentlyGrounded = Physics2D.OverlapCircle(_groundCheck.position, groundCheckRadius, _groundLayer);
+        if (isCurrentlyGrounded && !wasGroundedLastFrame)
         {
             jumpNumber = 0;
+            canJump = true;
         }
+
+        isGrounded = isCurrentlyGrounded;
+        wasGroundedLastFrame = isCurrentlyGrounded;
 
         if (isInWater)
         {
             ApplyWaterDrag();
         }
     }
+
 
     #region Read Inputs
 
@@ -89,19 +91,14 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            if (jumpNumber < _maxJump)
+            if (jumpNumber < _maxJump && canJump)
             {
-                jumpPressed = true;
-                jumpNumber += 1;
+                Jump();
             }
-        }
-        else if (context.canceled)
-        {
-            jumpPressed = false;
         }
     }
 
-    public void RedInteractInput(InputAction.CallbackContext context)
+    public void ReadInteractInput(InputAction.CallbackContext context)
     {
         if (context.performed && canInteract)
         {
@@ -132,8 +129,9 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
-        rgbd2D.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
-        jumpPressed = false;
+        jumpNumber ++;
+        canJump = false;
+        rgbd2D.AddForce(Vector2.up * normalJumpForce, ForceMode2D.Impulse);
     }
 
     public void Dash()
