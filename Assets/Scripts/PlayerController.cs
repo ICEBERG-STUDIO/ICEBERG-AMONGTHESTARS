@@ -6,23 +6,29 @@ public class PlayerController : MonoBehaviour
 {
     #region Variables
 
-    [Header("Player Attributes")] [SerializeField]
-    private GameObject _player;
+    [Header("Player Attributes")] 
+    [SerializeField] private GameObject _player;
 
     [SerializeField] private float _speed = 3.0f;
+    [SerializeField] private float _swimSpeed = 1.0f;
     [SerializeField] private float _jumpForce = 5f;
     [SerializeField] private int _maxJump = 1;
     [SerializeField] private float _dashForce = 2f;
+    [SerializeField] private float _waterGravityScale = 0.05f;
+
     private int jumpNumber = 0;
-    private bool jumpPressed = false;
-    
-    [Space] [Header("Layers : ")] [SerializeField]
-    public LayerMask _groundLayer;
+    private bool canJump = true;
+    private bool wasGroundedLastFrame = true;
+    private float normalGravity;
+    private float normalSpeed;
+    private float normalJumpForce;
+
+    [Header("Layers : ")] 
+    [SerializeField] public LayerMask _groundLayer;
     [SerializeField] public Transform _groundCheck;
     public float groundCheckRadius = 0.2f;
     private bool isGrounded = true;
-    
-    [Space]
+
     [Header("External Attributes :")]
     [SerializeField] private TextMeshProUGUI _interactKeyText;
 
@@ -31,6 +37,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rgbd2D;
     private bool canInteract;
     IInteractable iInteractable;
+    private bool isInWater = false;
 
     #endregion
 
@@ -39,6 +46,9 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rgbd2D = GetComponent<Rigidbody2D>();
+        normalGravity = rgbd2D.gravityScale;
+        normalSpeed = _speed;
+        normalJumpForce = _jumpForce;
     }
 
     private void OnDisable()
@@ -52,17 +62,23 @@ public class PlayerController : MonoBehaviour
     {
         Move();
 
-        isGrounded = Physics2D.OverlapCircle(_groundCheck.position, groundCheckRadius, _groundLayer);
-        if (jumpPressed && isGrounded)
-        {
-            Jump();
-        }
-
-        if (isGrounded)
+        // Ground check
+        bool isCurrentlyGrounded = Physics2D.OverlapCircle(_groundCheck.position, groundCheckRadius, _groundLayer);
+        if (isCurrentlyGrounded && !wasGroundedLastFrame)
         {
             jumpNumber = 0;
+            canJump = true;
+        }
+
+        isGrounded = isCurrentlyGrounded;
+        wasGroundedLastFrame = isCurrentlyGrounded;
+
+        if (isInWater)
+        {
+            ApplyWaterDrag();
         }
     }
+
 
     #region Read Inputs
 
@@ -75,26 +91,18 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            if (jumpNumber < _maxJump)
+            if (jumpNumber < _maxJump && canJump)
             {
-                jumpPressed = true;
-                jumpNumber += 1;
-            }
-            else if (context.canceled)
-            {
-                jumpPressed = false;
+                Jump();
             }
         }
     }
 
-    public void RedInteractInput(InputAction.CallbackContext context)
+    public void ReadInteractInput(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && canInteract)
         {
-            if (canInteract)
-            {
-                Interact();
-            }
+            Interact();
         }
     }
 
@@ -108,28 +116,22 @@ public class PlayerController : MonoBehaviour
 
     public void Move()
     {
-        // Find the direction
         direction = new Vector2(mMoveVector.x, mMoveVector.y).normalized;
 
         if (direction.magnitude >= 0.1f)
         {
-            // Apply the movement
-            rgbd2D.position += direction * _speed;
+            if (!isInWater)
+                direction.y = 0;
 
-            //m_Animator.SetBool("isWalkin", true);
-        }
-        else
-        {
-            // If the character don't move, set the isWalkin parameter to false
-            //m_Animator.SetBool("isWalkin", false);
+            rgbd2D.position += direction * _speed;
         }
     }
 
     public void Jump()
     {
-        // Apply jump force if grounded
-        rgbd2D.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
-        jumpPressed = false;
+        jumpNumber ++;
+        canJump = false;
+        rgbd2D.AddForce(Vector2.up * normalJumpForce, ForceMode2D.Impulse);
     }
 
     public void Dash()
@@ -140,7 +142,7 @@ public class PlayerController : MonoBehaviour
     public void Interact()
     {
         iInteractable.Interact();
-        ToogleInteractionKeyUiVisibility();
+        ToggleInteractionKeyUiVisibility();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -158,10 +160,15 @@ public class PlayerController : MonoBehaviour
             iInteractable = interactable;
             string textContent = GameManager.GetJsonTextValue("Interaction", true);
             _interactKeyText.text = textContent;
-            ToogleInteractionKeyUiVisibility();
+            ToggleInteractionKeyUiVisibility();
+        }
+
+        if (other.CompareTag("Water"))
+        {
+            EnterWater();
         }
     }
-
+    
     private void OnTriggerExit2D(Collider2D other)
     {
         //On trigger exit
@@ -177,10 +184,45 @@ public class PlayerController : MonoBehaviour
             iInteractable = null;
             _interactKeyText.gameObject.SetActive(false);
         }
+
+        if (other.CompareTag("Water"))
+        {
+            ExitWater();
+        }
     }
 
-    private void ToogleInteractionKeyUiVisibility()
+    private void ToggleInteractionKeyUiVisibility()
     {
         _interactKeyText.gameObject.SetActive(!_interactKeyText.gameObject.activeSelf);
+    }
+    
+    private void EnterWater()
+    {
+        isInWater = true;
+        rgbd2D.gravityScale = _waterGravityScale;
+        _speed = _swimSpeed;
+        _jumpForce /= 10.0f;
+    }
+
+    private void ExitWater()
+    {
+        isInWater = false;
+        rgbd2D.gravityScale = normalGravity;
+        _speed = normalSpeed;
+        _jumpForce = normalJumpForce;
+    }
+
+    /// <summary>
+    /// Reduce Player vector Y when entering the water to simulate the water friction
+    /// </summary>
+    private void ApplyWaterDrag()
+    {
+        Vector2 velocity = rgbd2D.linearVelocity;
+
+        if (velocity.y < -2f) // reduce speed when entering the water
+        {
+            velocity.y = Mathf.Lerp(velocity.y, -2f, Time.fixedDeltaTime * 2f); // Lerp(Actual Y speed, target Y speed, FixedDeltaTime * speed transition)
+            rgbd2D.linearVelocity = velocity;
+        }
     }
 }
