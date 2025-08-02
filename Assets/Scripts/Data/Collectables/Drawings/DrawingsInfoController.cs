@@ -1,43 +1,58 @@
-using NUnit.Framework;
 using UnityEngine;
 
 using System.Collections.Generic;
+using UnityEngine.Events;
+using NaughtyAttributes;
 
-public class DrawingsInfoController : MonoBehaviour, IOnTrigger, IInteractable
+public class DrawingsInfoController : MonoBehaviour, IInteractable
 {
+    #region Variables
     [Header("Database")]
     [SerializeField] private DrawingsDatabaseManager _databaseMgr;
     [SerializeField] private DrawingsDatabase _database;
 
-
     [Header("Drawing infos")]
-    [SerializeField] private int id;
-    [SerializeField] private Sprite _mySprite;
+    [SerializeField, Tooltip("Id of the first drawing is 0, 2nd is 1 etc..."), ValidateInput("IsIDValid")] private int _id;
 
-    private List<DrawingsData> _data;
+    [Header("Events")]
+    [SerializeField] UnityEvent _OnCollect;
+
+    // To add according to the requests of the GD
+    //[SerializeField] private Sprite _mySprite;
+    //private List<DrawingsData> _data;
 
 
     private DrawingsData _myDrawing;
 
-    private bool _inTrigger;
+    // check if ID is valid
+    private bool IsIDValid()
+    {
+        if(_id >=0 && _id <= _database.drawingsData.Count-1) return true;
 
+        Debug.LogError("Drawing Id must be between 0 and the number of drawings - 1.");
+        return false;
+    }
+
+    #endregion
+
+    #region Event Functions
 
     private void Awake()
     {
-        UpdateMyDrawing(); 
+        UpdateMyDrawing();
     }
 
     private void Start()
     {
-        //_data = FindFirstObjectByType<DrawingsDatabase>().drawingsData;
-
+        // To add according to the requests of the GD
+            //_data = FindFirstObjectByType<DrawingsDatabase>().drawingsData;
 
     }
 
 
-    // Update is called once per frame
     void Update()
     {
+        // A DELETE
         if (Input.GetKeyDown(KeyCode.Escape))
         {
 
@@ -45,53 +60,38 @@ public class DrawingsInfoController : MonoBehaviour, IOnTrigger, IInteractable
         }
     }
 
-    //private void Reset()
-    //{
-    //    //Debug.Log("reset");
-    //}
-
-
+    // update current star in editor 
     private void OnValidate()
     {
         UpdateMyDrawing();
-        //Debug.Log("valid");
     }
 
-    private void UpdateMyDrawing()
+    #endregion
+
+    // update data according to the current id
+    private void UpdateMyDrawing() 
     {
-        if(_databaseMgr !=null) _myDrawing = _databaseMgr.GetDrawing(id);
-        //_mySprite = 
+        if(_databaseMgr !=null)  _myDrawing = _databaseMgr.GetDrawing(_id);
     }
 
     public void CollectDrawing()
     {
-        //update drawing data in database
-        _myDrawing.collectablesInfos.inInventory = true; 
+        //collected
+        _myDrawing.collectablesData.inInventory = true;
+
+        //collect behaviour
+        _OnCollect?.Invoke();
 
         Destroy(gameObject);
     }
 
 
+    #region Interfaces
+
     //Interact
     public void Interact()
     {
-        if(_inTrigger) CollectDrawing();
-    }
-
-
-    #region OnTrigger Interface
-
-    //on enter
-    public void OnEnter()
-    {
-        _inTrigger = true ;
-    }
-
-
-    //on exit
-    public void OnExit()
-    {
-        _inTrigger = false;
+        CollectDrawing();
     }
 
     #endregion

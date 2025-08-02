@@ -5,5 +5,5 @@ public class StarsData
 {
     public string name;
 
-    public CollectablesInfo collectablesInfos;
+    public CollectablesData collectablesData;
 }

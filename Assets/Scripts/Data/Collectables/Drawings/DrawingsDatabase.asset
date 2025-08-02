@@ -14,25 +14,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drawingsData:
   - name: 
-    collectablesInfos:
+    collectablesData:
       caption: 
       biome: 0
       inInventory: 0
       sprite: {fileID: 0}
   - name: 
-    collectablesInfos:
+    collectablesData:
       caption: 
       biome: 0
       inInventory: 0
       sprite: {fileID: 0}
   - name: 
-    collectablesInfos:
+    collectablesData:
       caption: 
       biome: 0
       inInventory: 0
       sprite: {fileID: 0}
   - name: 
-    collectablesInfos:
+    collectablesData:
+      caption: 
+      biome: 0
+      inInventory: 0
+      sprite: {fileID: 0}
+  - name: 
+    collectablesData:
+      caption: 
+      biome: 0
+      inInventory: 0
+      sprite: {fileID: 0}
+  - name: 
+    collectablesData:
       caption: 
       biome: 0
       inInventory: 0

@@ -13,10 +13,18 @@ public class DrawingsDatabaseManager : MonoBehaviour
     {
         foreach (DrawingsData drawing in _drawingsDatabase.drawingsData) 
         {
-            Debug.Log("là");
-            if (drawing.collectablesInfos.inInventory == false) return false;
+            if (drawing.collectablesData.inInventory == false) return false;
         }
 
         return true;
+    }
+
+    // reset inventory
+    public void RemoveAllDrawingsFromInventory()
+    {
+        foreach (DrawingsData drawing in _drawingsDatabase.drawingsData)
+        {
+            drawing.collectablesData.inInventory = false;
+        }
     }
 }

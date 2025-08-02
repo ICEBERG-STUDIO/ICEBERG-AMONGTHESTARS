@@ -4,6 +4,7 @@ using UnityEngine;
 public class DrawingsData
 {
     public string name;
-    public CollectablesInfo collectablesInfos;
+
+    public CollectablesData collectablesData;
 
 }

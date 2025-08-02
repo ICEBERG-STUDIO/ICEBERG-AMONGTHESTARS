@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class CollectablesInfo
+public class CollectablesData 
 {
     public string caption;
 
