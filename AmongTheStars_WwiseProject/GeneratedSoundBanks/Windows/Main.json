@@ -197,7 +197,7 @@
       {
        "Id": "769936087",
        "Name": "Parametric EQ (Custom)",
-       "ObjectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\Footsteps Sand\\[Effect Slot [0]: (Parametric EQ)]\\Parametric EQ (Custom)",
+       "ObjectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\Player\\Footsteps\\Footsteps Sand\\[Effect Slot [0]: (Parametric EQ)]\\Parametric EQ (Custom)",
        "GUID": "{E4C73F22-A6B4-4032-8EF0-D7A449E8F010}",
        "LibName": "Wwise Parametric EQ",
        "LibId": "6881283"
@@ -302,6 +302,6 @@
     ]
    }
   ],
-  "FileHash": "{1924D6C4-1F74-4917-4313-8D1221E8F153}"
+  "FileHash": "{09653520-2417-9BBF-6348-98D1609603CC}"
  }
 }

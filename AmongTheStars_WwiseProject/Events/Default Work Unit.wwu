@@ -10,7 +10,7 @@
 								<Action Name="" ID="{973085BA-6C76-43D0-A688-952B54A2E6F5}" ShortID="511909836">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="SavePoint" ID="{ECD1750B-9231-4BE1-B419-6AC67379D415}" WorkUnitID="{49C29FDA-B85D-4588-8F30-69C184E75AD7}"/>
+											<ObjectRef Name="SavePoint" ID="{ECD1750B-9231-4BE1-B419-6AC67379D415}" WorkUnitID="{F4CE6804-A688-4EE1-AE2A-AF55941E6C18}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -26,6 +26,17 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Footsteps Sand" ID="{26749068-DC63-43DA-B7A8-7FEE5E29781C}" WorkUnitID="{F4CE6804-A688-4EE1-AE2A-AF55941E6C18}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Swim_Water" ID="{8459B224-7A5E-41A8-AF2B-A2D861969B6F}">
+							<ChildrenList>
+								<Action Name="" ID="{75F31874-2F84-460B-9B78-3A418A43A7BA}" ShortID="623854090">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Swim Water" ID="{B8175097-6DAD-44E4-8FD8-F103EEEA8F27}" WorkUnitID="{F4CE6804-A688-4EE1-AE2A-AF55941E6C18}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

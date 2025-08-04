@@ -18,7 +18,7 @@
                     "name": "Jump",
                     "type": "Button",
                     "id": "33b62abf-94ae-4eda-a8a8-509545529785",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -36,7 +36,25 @@
                     "name": "Dash",
                     "type": "Button",
                     "id": "72cbc6a7-58e3-428d-96ce-64cf72b3326e",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Sonnar",
+                    "type": "Button",
+                    "id": "f068bd85-5ef0-4a13-84ca-c87146e475e6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Fruits",
+                    "type": "Button",
+                    "id": "fccafe02-baa4-463d-ae44-3274e04e83b5",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -66,8 +84,30 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "right",
+                    "name": "up",
                     "id": "563f2021-b2a3-43b1-97c7-77d5b3bc4224",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "923dd649-48d5-43f3-900d-b8f29de783e0",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "1d7a4673-ecfc-4dab-a724-8e66f98a8fd7",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
@@ -172,6 +212,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "321567ca-6dbd-4b9f-86fe-8262e0f2e6a9",
+                    "path": "<Keyboard>/semicolon",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sonnar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "284a31f7-70cc-47c1-9d35-874904cc7a4b",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fruits",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
