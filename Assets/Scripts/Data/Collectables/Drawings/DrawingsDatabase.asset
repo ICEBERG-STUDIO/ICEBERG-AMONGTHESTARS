@@ -12,40 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5480bc335ba22c54fbce23f4d03df061, type: 3}
   m_Name: DrawingsDatabase
   m_EditorClassIdentifier: 
-  drawingsData:
+  drawingDatas:
   - name: 
     collectablesData:
+      label: 
       caption: 
-      biome: 0
-      inInventory: 0
+      ID: 
       sprite: {fileID: 0}
+      icon: {fileID: 0}
+    isCollected: 0
+    biome: 0
   - name: 
     collectablesData:
+      label: 
       caption: 
-      biome: 0
-      inInventory: 0
+      ID: 
       sprite: {fileID: 0}
+      icon: {fileID: 0}
+    isCollected: 0
+    biome: 0
   - name: 
     collectablesData:
+      label: 
       caption: 
-      biome: 0
-      inInventory: 0
+      ID: 
       sprite: {fileID: 0}
-  - name: 
-    collectablesData:
-      caption: 
-      biome: 0
-      inInventory: 0
-      sprite: {fileID: 0}
-  - name: 
-    collectablesData:
-      caption: 
-      biome: 0
-      inInventory: 0
-      sprite: {fileID: 0}
-  - name: 
-    collectablesData:
-      caption: 
-      biome: 0
-      inInventory: 0
-      sprite: {fileID: 0}
+      icon: {fileID: 0}
+    isCollected: 0
+    biome: 0

@@ -2,13 +2,13 @@ using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class StarsInfoController : MonoBehaviour, IInteractable
+public class StarController : MonoBehaviour, IInteractable
 {
     #region Variables
 
     [Header("Database")]
     [SerializeField] private StarsDatabaseManager _databaseMgr;
-    [SerializeField] private StarsDatabase _database;
+    private StarsDatabase _database;
 
     [Header("Star infos")]
     [SerializeField, Tooltip("Id of the first star is 0, 2nd is 1 etc..."), ValidateInput("IsIDValid")] private int _id;
@@ -20,13 +20,13 @@ public class StarsInfoController : MonoBehaviour, IInteractable
         //[SerializeField] private Sprite _mySprite;
         //private List<StarsData> _data;
 
-    private StarsData _myStar;
+    private StarData _myStar;
 
 
     // Check if id is valid
     private bool IsIDValid()
     {
-        if (_id >= 0 && _id <= _database.starsData.Count - 1) return true;
+        if (_id >= 0 && _id <= _database.starDatas.Count - 1) return true;
 
         Debug.LogError("Star Id must be between 0 and the number of stars - 1.");
         return false;
@@ -43,13 +43,7 @@ public class StarsInfoController : MonoBehaviour, IInteractable
 
     void Start()
     {
-        // To add according to the requests of the GD
-            //_data = FindFirstObjectByType<StarsDatabase>().starsData;
-    }
-
-
-    void Update()
-    {
+        _database = _databaseMgr.starsDatabase;
     }
 
     // update current star in editor 
@@ -70,7 +64,7 @@ public class StarsInfoController : MonoBehaviour, IInteractable
     private void CollectStar()
     {
         //collect
-        _myStar.collectablesData.inInventory = true;
+        _myStar.isCollected = true;
 
         //on collect behaviour
         _OnCollect?.Invoke();

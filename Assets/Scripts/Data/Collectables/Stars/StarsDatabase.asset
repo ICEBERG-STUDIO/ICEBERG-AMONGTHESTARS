@@ -12,28 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99bf790a8cdc60041a345a32de23a12a, type: 3}
   m_Name: StarsDatabase
   m_EditorClassIdentifier: 
-  starsData:
+  starDatas:
   - name: 
     collectablesData:
+      label: 
       caption: 
-      biome: 0
-      inInventory: 0
+      ID: 
       sprite: {fileID: 0}
+      icon: {fileID: 0}
+    isCollected: 0
+    biome: 0
   - name: 
     collectablesData:
+      label: 
       caption: 
-      biome: 0
-      inInventory: 0
+      ID: 
       sprite: {fileID: 0}
+      icon: {fileID: 0}
+    isCollected: 0
+    biome: 0
   - name: 
     collectablesData:
+      label: 
       caption: 
-      biome: 0
-      inInventory: 0
+      ID: 
       sprite: {fileID: 0}
-  - name: 
-    collectablesData:
-      caption: 
-      biome: 0
-      inInventory: 0
-      sprite: {fileID: 0}
+      icon: {fileID: 0}
+    isCollected: 0
+    biome: 0

@@ -1,10 +1,9 @@
 using UnityEngine;
 
-using System.Collections.Generic;
 using UnityEngine.Events;
 using NaughtyAttributes;
 
-public class DrawingsInfoController : MonoBehaviour, IInteractable
+public class DrawingController : MonoBehaviour, IInteractable
 {
     #region Variables
     [Header("Database")]
@@ -22,12 +21,12 @@ public class DrawingsInfoController : MonoBehaviour, IInteractable
     //private List<DrawingsData> _data;
 
 
-    private DrawingsData _myDrawing;
+    private DrawingData _myDrawing;
 
     // check if ID is valid
     private bool IsIDValid()
     {
-        if(_id >=0 && _id <= _database.drawingsData.Count-1) return true;
+        if(_id >=0 && _id <= _database.drawingDatas.Count-1) return true;
 
         Debug.LogError("Drawing Id must be between 0 and the number of drawings - 1.");
         return false;
@@ -44,20 +43,19 @@ public class DrawingsInfoController : MonoBehaviour, IInteractable
 
     private void Start()
     {
-        // To add according to the requests of the GD
-            //_data = FindFirstObjectByType<DrawingsDatabase>().drawingsData;
+        _database = _databaseMgr.drawingsDatabase;
 
     }
 
 
     void Update()
     {
-        // A DELETE
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
+        // -- DEBUG --
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
 
-            Debug.Log(_databaseMgr.GoodEndingUnlock());
-        }
+        //    Debug.Log(_databaseMgr.GoodEndingUnlock());
+        //}
     }
 
     // update current star in editor 
@@ -77,7 +75,7 @@ public class DrawingsInfoController : MonoBehaviour, IInteractable
     public void CollectDrawing()
     {
         //collected
-        _myDrawing.collectablesData.inInventory = true;
+        _myDrawing.isCollected = true;
 
         //collect behaviour
         _OnCollect?.Invoke();

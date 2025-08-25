@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -27,22 +28,34 @@ public class AddressableInstantiator : MonoBehaviour, IOnTrigger
         transform.position = Vector3.zero;
     }
 
+    [Button]
+    private void LoadLevel()
+    {
+        if (_environment != null) _environment.InstantiateAsync().Completed += OnAddressableLoaded;
+    }
+
+    [Button]
+    private void UnloadLevel()
+    {
+        if (_instanceReference != null && _environment != null)
+        {
+            _environment.ReleaseInstance(_instanceReference);
+        }
+    }
+
     #region OnTrigger Interface
 
     //load on enter
     public void OnEnter()
     {
-        if (_environment != null)  _environment.InstantiateAsync().Completed += OnAddressableLoaded;
+        LoadLevel();
     }
 
 
     //unload on exit
     public void OnExit()
     {
-        if (_instanceReference != null && _environment!=null)
-        {
-            _environment.ReleaseInstance(_instanceReference);
-        }
+        UnloadLevel();
     }
 
     #endregion
