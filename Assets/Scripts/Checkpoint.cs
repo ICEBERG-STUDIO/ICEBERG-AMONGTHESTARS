@@ -11,6 +11,7 @@ public class Checkpoint : MonoBehaviour, IInteractable
 {
     public CheckpointsData data;
     [SerializeField] private GameObject checkpointUI;
+    [SerializeField] private AK.Wwise.Event validateCheckpointEvent;
     
 #if UNITY_EDITOR
     string folderPath = "Assets/Checkpoints";
@@ -92,5 +93,6 @@ public class Checkpoint : MonoBehaviour, IInteractable
         if(!data.IsCheckpointFound)
             data.IsCheckpointFound = true;
         
+        validateCheckpointEvent.Post(gameObject);
     }
 }

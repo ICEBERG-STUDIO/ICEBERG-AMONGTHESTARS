@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public enum BIOME
+public enum BIOMES
 {
     NONE = 0,
     FOREST = 1,

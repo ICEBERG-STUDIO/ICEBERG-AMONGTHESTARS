@@ -7,6 +7,7 @@ TagManager:
   - PlateformeSonnar
   - AmesDamnees
   - Sun
+  - Water
   layers:
   - Default
   - TransparentFX

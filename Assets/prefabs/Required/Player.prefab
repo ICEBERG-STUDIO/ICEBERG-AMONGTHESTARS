@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a3de9d1408f25449bb288eebcebfb832, type: 3}
+  m_Sprite: {fileID: -2880601288549553812, guid: deb8033db5a79924895fc0eb399e947f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2847337334453517471
@@ -132,6 +132,8 @@ GameObject:
   - component: {fileID: 8709121577486627233}
   - component: {fileID: 8321606023057490111}
   - component: {fileID: 6226095145376595384}
+  - component: {fileID: 5928262517272945855}
+  - component: {fileID: 7029977750189608695}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -154,6 +156,7 @@ Transform:
   m_Children:
   - {fileID: 2490567738153072892}
   - {fileID: 4873420908681594169}
+  - {fileID: 3244560966387469927}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7642288359165329262
@@ -168,20 +171,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ee20410e638b746bba827417d2c51a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 0}
+  _player: {fileID: 4351120071276713152}
   _speed: 0.2
+  _swimSpeed: 1
   _jumpForce: 10
   _maxJump: 1
   _dashForce: 2
   _waterGravityScale: 0.05
+  _animator: {fileID: 5928262517272945855}
+  _spriteObject: {fileID: 415847942868008992}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
   _groundCheck: {fileID: 4873420908681594169}
   groundCheckRadius: 0.2
   _interactKeyText: {fileID: 0}
-  _sonnarPrefab: {fileID: 6281802697212006866, guid: 5f9a8642a19078740bc2795ed6fd9a44, type: 3}
-  _posSonnar: {fileID: 3244560966387469927}
+  _sonnarPlayer: {fileID: 0}
+  _fruitsPlayer: {fileID: 0}
 --- !u!114 &2025647745348887373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,6 +281,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: f068bd85-5ef0-4a13-84ca-c87146e475e6
     m_ActionName: 'Player/Sonnar[/Keyboard/m]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fccafe02-baa4-463d-ae44-3274e04e83b5
+    m_ActionName: 'Player/Fruits[/Keyboard/k]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -342,8 +352,65 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0.017181635, y: -0.07}
-  m_Size: {x: 1.0612674, y: 2.5}
+  m_Size: {x: 1.0612674, y: 2.4}
   m_Direction: 0
+--- !u!114 &6226095145376595384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4351120071276713152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a780c80fe6781cb4c9839b9287f200de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sonnarPrefab: {fileID: 6281802697212006866, guid: 5f9a8642a19078740bc2795ed6fd9a44, type: 3}
+  _posSonnar: {fileID: 3244560966387469927}
+--- !u!95 &5928262517272945855
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4351120071276713152}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: beed758352e3ab947ad13941d6535f06, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7029977750189608695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4351120071276713152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8e20fc097e4e04883f48c905f549f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sandFootstepsEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 8f1e709631f68974ab4fbfe1a1861960, type: 2}
+  _swimEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b6a95c023a0345947918094f9da696fd, type: 2}
+  _player: {fileID: 4351120071276713152}
 --- !u!1 &7252535654395985624
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,17 +442,3 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1212225611247024395}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6226095145376595384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4351120071276713152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a780c80fe6781cb4c9839b9287f200de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sonnarPrefab: {fileID: 6281802697212006866, guid: 5f9a8642a19078740bc2795ed6fd9a44, type: 3}
-  _posSonnar: {fileID: 3244560966387469927}

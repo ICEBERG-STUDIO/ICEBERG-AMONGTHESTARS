@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointName: Abysse
   checkpointPosition: {x: -31.947243, y: -2.6487665, z: -5.5610642}
-  IsCheckpointFound: 1
+  IsCheckpointFound: 0
