@@ -3,8 +3,11 @@ using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
+    [Header("Values")]
     [SerializeField] int _initHealth;
     [SerializeField] int _maxHealth;
+
+    [Header("Events")]
     [SerializeField] UnityEvent _OnTakeDamage;
     [SerializeField] UnityEvent _OnDie;
 
@@ -13,45 +16,47 @@ public class Health : MonoBehaviour
     [HideInInspector] public STATE _state;
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
+    {
+        Init();
+    }
+
+    private void Init()
     {
         _currentHealth = _initHealth;
-
         _state = STATE.ALIVE;
-
     }
 
     public void TakeDamage(int dmg)
     {
-        if (_state == STATE.DEAD) return;
+        //conditions
+        if (_state == STATE.DEAD || dmg <= 0) return;
 
-        if (dmg <= 0) return;
-
-        //Debug.Log("is taking dmg");
-
+        // Decrease Health
         _currentHealth = Mathf.Clamp(_currentHealth - dmg, _minHealth, _maxHealth);
         _OnTakeDamage?.Invoke();
 
+        //Check Death
         if (_currentHealth <= _minHealth)
-        {
             Die();
-        }
     }
 
     public void Heal(int heal)
     {
+        //conditions
         if (_state == STATE.DEAD) return;
 
-        //Debug.Log("healing");
+        //Increase Health
         _currentHealth = Mathf.Clamp(_currentHealth + heal, _minHealth,_maxHealth);
     }
 
     public void Die()
     {
-        _OnDie?.Invoke();
         _state = STATE.DEAD;
-        //Debug.Log("is dead");
+
+        _OnDie?.Invoke();
+
+        // call respawn + init
     }
 
 }
@@ -60,6 +65,7 @@ public enum STATE
 {
     NONE = 0,
     ALIVE = 1,
-    DEAD = 2,
+    INVINCIBLE = 2,
+    DEAD = 3,
 }
 

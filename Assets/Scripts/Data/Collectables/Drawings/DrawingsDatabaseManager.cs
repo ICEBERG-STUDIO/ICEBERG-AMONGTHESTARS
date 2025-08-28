@@ -1,20 +1,18 @@
 
 using UnityEngine;
-using System.Collections.Generic;
 
 public class DrawingsDatabaseManager : MonoBehaviour
 {
-    [SerializeField] private DrawingsDatabase _drawingsDatabase;
+    public DrawingsDatabase drawingsDatabase;
 
-    public DrawingsData GetDrawing(int id) => _drawingsDatabase.drawingsData[id];
+    public DrawingData GetDrawing(int id) => drawingsDatabase.drawingDatas[id];
 
-
+    // -- UNLOCK END --
     public bool GoodEndingUnlock()
     {
-        foreach (DrawingsData drawing in _drawingsDatabase.drawingsData) 
+        foreach (DrawingData drawing in drawingsDatabase.drawingDatas) 
         {
-            Debug.Log("là");
-            if (drawing.collectablesInfos.inInventory == false) return false;
+            if (drawing.isCollected == false) return false;
         }
 
         return true;
