@@ -102,7 +102,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _databaseMgr: {fileID: 8716109510002374474, guid: dd89d79cb10a1174e8d066bee252d38c, type: 3}
-  _database: {fileID: 11400000, guid: f08f4f2b6f85a2342b8e00b122638db6, type: 2}
   _id: 0
   _OnCollect:
     m_PersistentCalls:
