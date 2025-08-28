@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointName: Base Arena
   checkpointPosition: {x: 6.4565783, y: 3.51, z: -5.5610642}
-  IsCheckpointFound: 0
+  IsCheckpointFound: 1

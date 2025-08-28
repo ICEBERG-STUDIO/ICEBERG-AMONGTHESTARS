@@ -785,6 +785,35 @@
 								<ActiveSource Name="Musical, Chime, Wind Chimes, Ringing SND0729 1" ID="{0A239189-7B59-4E9A-A633-2C171519BFE2}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="ValidateCheckpoint" ID="{083C2B1A-57D4-4830-8564-2E5918CD774B}" ShortID="1051279023">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{47CFC0FD-8598-4275-8DDB-1A2591260326}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{505F07D9-2C47-4D28-99C5-1D94061E52B8}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ValidateCheckpoint" ID="{86D03FE2-9E3B-4510-97B1-5B46721191DD}">
+									<Language>SFX</Language>
+									<AudioFile>ValidateCheckpoint.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="473668220"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ValidateCheckpoint" ID="{86D03FE2-9E3B-4510-97B1-5B46721191DD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

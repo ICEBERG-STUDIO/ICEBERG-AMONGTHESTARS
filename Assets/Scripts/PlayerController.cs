@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int _maxJump = 1;
     [SerializeField] private float _dashForce = 2f;
     [SerializeField] private float _waterGravityScale = 0.05f;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private GameObject _spriteObject;
 
     private int jumpNumber = 0;
     private bool canJump = true;
@@ -143,8 +145,23 @@ public class PlayerController : MonoBehaviour
         {
             if (!isInWater)
                 direction.y = 0;
+            
+            _spriteObject.TryGetComponent<SpriteRenderer>(out SpriteRenderer spriteRenderer);
+            if (direction.x < 0.0f)
+            {
+                spriteRenderer.flipX = true;
+            }
+            else
+            {
+                spriteRenderer.flipX = false;
+            }
 
             rgbd2D.position += direction * _speed;
+            _animator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            _animator.SetBool("IsWalking", false);
         }
     }
 

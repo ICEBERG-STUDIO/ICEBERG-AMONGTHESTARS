@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID PLAY_FOOTSTEPS_SAND = 745820000U;
         static const AkUniqueID PLAY_SAVEPOINT = 3598155673U;
+        static const AkUniqueID PLAY_VALIDATECHECKPOINT = 1535853890U;
     } // namespace EVENTS
 
     namespace BANKS

@@ -137,6 +137,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 1a43e27911ec81740b8fde3648d2d758, type: 2}
   checkpointUI: {fileID: 0}
+  validateCheckpointEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d9f9caf9a2d67c54aa07dd7758f1607f, type: 2}
 --- !u!58 &8282767384174193913
 CircleCollider2D:
   m_ObjectHideFlags: 0

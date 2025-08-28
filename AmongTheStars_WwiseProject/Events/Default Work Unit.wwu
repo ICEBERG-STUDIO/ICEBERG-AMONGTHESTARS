@@ -16,6 +16,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_ValidateCheckpoint" ID="{6EE8D3A5-2885-4240-A422-C44596A2FF27}">
+							<ChildrenList>
+								<Action Name="" ID="{9E409B33-1893-4DA4-8216-BED7C2F45217}" ShortID="999116365">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ValidateCheckpoint" ID="{083C2B1A-57D4-4830-8564-2E5918CD774B}" WorkUnitID="{F4CE6804-A688-4EE1-AE2A-AF55941E6C18}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Footsteps" ID="{7A92F0CF-A36A-475D-B917-E0995C1E9A64}" ShortID="112046791">
