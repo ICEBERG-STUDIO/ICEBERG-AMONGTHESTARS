@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{7A6DD42A-D546-4DA0-8D3F-D63507A1C96F}" SchemaVersion="123">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{7A6DD42A-D546-4DA0-8D3F-D63507A1C96F}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Main" ID="{037CC040-CBAF-4B54-AC4D-A2F5168760E5}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Play_ValidateCheckpoint" ID="{6EE8D3A5-2885-4240-A422-C44596A2FF27}" WorkUnitID="{94361864-92AD-46DC-AFD3-A16034624A16}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Footsteps_Sand" ID="{AA981170-65E9-4B6F-86E6-52B605D06AF0}" WorkUnitID="{94361864-92AD-46DC-AFD3-A16034624A16}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SavePoint" ID="{88DF81EA-04DC-4C44-89B8-5168F3D4C0FC}" WorkUnitID="{94361864-92AD-46DC-AFD3-A16034624A16}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

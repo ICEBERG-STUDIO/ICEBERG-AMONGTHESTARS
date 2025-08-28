@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{94361864-92AD-46DC-AFD3-A16034624A16}" SchemaVersion="123">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{94361864-92AD-46DC-AFD3-A16034624A16}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Checkpoint" ID="{F2466794-F473-4E95-AFC1-3C42D564680B}" ShortID="797082585">
+					<ChildrenList>
+						<Event Name="Play_SavePoint" ID="{88DF81EA-04DC-4C44-89B8-5168F3D4C0FC}">
+							<ChildrenList>
+								<Action Name="" ID="{973085BA-6C76-43D0-A688-952B54A2E6F5}" ShortID="511909836">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SavePoint" ID="{ECD1750B-9231-4BE1-B419-6AC67379D415}" WorkUnitID="{F4CE6804-A688-4EE1-AE2A-AF55941E6C18}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_ValidateCheckpoint" ID="{6EE8D3A5-2885-4240-A422-C44596A2FF27}">
+							<ChildrenList>
+								<Action Name="" ID="{9E409B33-1893-4DA4-8216-BED7C2F45217}" ShortID="999116365">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ValidateCheckpoint" ID="{083C2B1A-57D4-4830-8564-2E5918CD774B}" WorkUnitID="{F4CE6804-A688-4EE1-AE2A-AF55941E6C18}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Footsteps" ID="{7A92F0CF-A36A-475D-B917-E0995C1E9A64}" ShortID="112046791">
+					<ChildrenList>
+						<Event Name="Play_Footsteps_Sand" ID="{AA981170-65E9-4B6F-86E6-52B605D06AF0}">
+							<ChildrenList>
+								<Action Name="" ID="{3C0E6BAF-0785-4E69-9032-2EEB0A0B8186}" ShortID="819525150">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Footsteps Sand" ID="{26749068-DC63-43DA-B7A8-7FEE5E29781C}" WorkUnitID="{F4CE6804-A688-4EE1-AE2A-AF55941E6C18}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Swim_Water" ID="{8459B224-7A5E-41A8-AF2B-A2D861969B6F}">
+							<ChildrenList>
+								<Action Name="" ID="{75F31874-2F84-460B-9B78-3A418A43A7BA}" ShortID="623854090">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Swim Water" ID="{B8175097-6DAD-44E4-8FD8-F103EEEA8F27}" WorkUnitID="{F4CE6804-A688-4EE1-AE2A-AF55941E6C18}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

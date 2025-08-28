@@ -1,0 +1,33 @@
+Event	ID	Name			Wwise Object Path	Notes
+	745820000	Play_Footsteps_Sand			\Default Work Unit\Footsteps\Play_Footsteps_Sand	
+	1535853890	Play_ValidateCheckpoint			\Default Work Unit\Checkpoint\Play_ValidateCheckpoint	
+	3598155673	Play_SavePoint			\Default Work Unit\Checkpoint\Play_SavePoint	
+
+Effect plug-ins	ID	Name	Type				Notes
+	769936087	Parametric EQ (Custom)	Wwise Parametric EQ			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	21857854	08	C:\Users\nofla\Documents\IcebergStudio\Games\AmongTheStars\AmongTheStars_WwiseProject\.cache\A8\{A8C2FF5B-2CD7-A160-1D00-7E11507FB240}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Footsteps Sand\08		88296
+	42149555	06	C:\Users\nofla\Documents\IcebergStudio\Games\AmongTheStars\AmongTheStars_WwiseProject\.cache\73\{73889F38-312B-6D36-0280-9EF9F5D640CB}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Footsteps Sand\06		88296
+	128835272	05	C:\Users\nofla\Documents\IcebergStudio\Games\AmongTheStars\AmongTheStars_WwiseProject\.cache\8E\{8EE98BB2-4D3F-1DAF-EA9A-09BD9FED5574}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Footsteps Sand\05		88296
+	208998250	16	C:\Users\nofla\Documents\IcebergStudio\Games\AmongTheStars\AmongTheStars_WwiseProject\.cache\4D\{4D6C9A8F-765C-FCB5-3A23-059731F223E9}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Footsteps Sand\16		88296
+	226996262	01	C:\Users\nofla\Documents\IcebergStudio\Games\AmongTheStars\AmongTheStars_WwiseProject\.cache\99\{997990E1-D7A3-02E2-728A-F0C3D4306E26}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Footsteps Sand\01		88296
+	270230557	20	C:\Users\nofla\Documents\IcebergStudio\Games\AmongTheStars\AmongTheStars_WwiseProject\.cache\31\{31B15034-8543-59F6-7929-55D639D93E9D}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Footsteps Sand\20		88296
+	291486878	17	C:\Users\nofla\Documents\IcebergStudio\Games\AmongTheStars\AmongTheStars_WwiseProject\.cache\13\{137EEFC8-180C-4FFD-CC0B-8646834185B9}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Footsteps Sand\17		88296
+	355864234	21	C:\Users\nofla\Documents\IcebergStudio\Games\AmongTheStars\AmongTheStars_WwiseProject\.cache\3E\{3EE15AD0-0146-F0EF-A1D1-F095D0BD4939}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Footsteps Sand\21		67884
+	362959960	09	C:\Users\nofla\Documents\IcebergStudio\Games\AmongTheStars\AmongTheStars_WwiseProject\.cache\99\{990E224A-FF2A-B105-5FE2-04FCA0E7B4E8}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Footsteps Sand\09		88296
+	389656522	15	C:\Users\nofla\Documents\IcebergStudio\Games\AmongTheStars\AmongTheStars_WwiseProject\.cache\34\{34930580-3E2B-C144-A4DC-9334D4AE7856}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Footsteps Sand\15		88296
+	394381355	13	C:\Users\nofla\Documents\IcebergStudio\Games\AmongTheStars\AmongTheStars_WwiseProject\.cache\AB\{AB3D214A-93C5-0FDA-FF3B-2BD3D0C6F5AB}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Footsteps Sand\13		88296
+	408318220	12	C:\Users\nofla\Documents\IcebergStudio\Games\AmongTheStars\AmongTheStars_WwiseProject\.cache\59\{5958EC11-9D27-A5ED-0728-1D5AFC7720F0}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Footsteps Sand\12		88296
+	412057169	14	C:\Users\nofla\Documents\IcebergStudio\Games\AmongTheStars\AmongTheStars_WwiseProject\.cache\E3\{E32DEAA1-187B-B934-4EEE-B59AD07970E7}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Footsteps Sand\14		88296
+	473668220	ValidateCheckpoint	C:\Users\nofla\Documents\IcebergStudio\Games\AmongTheStars\AmongTheStars_WwiseProject\.cache\4E\{4EC7FDEF-EF6E-0BFE-3FE5-3894EF0B3F4E}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Checkpoint\ValidateCheckpoint		318604
+	710679089	04	C:\Users\nofla\Documents\IcebergStudio\Games\AmongTheStars\AmongTheStars_WwiseProject\.cache\1F\{1FABE80F-D776-6893-FCBA-8BE5F1E58FAE}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Footsteps Sand\04		88296
+	727218943	02	C:\Users\nofla\Documents\IcebergStudio\Games\AmongTheStars\AmongTheStars_WwiseProject\.cache\48\{4801F92F-C510-AA6C-1BEA-E036AEF74B71}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Footsteps Sand\02		88296
+	744784979	18	C:\Users\nofla\Documents\IcebergStudio\Games\AmongTheStars\AmongTheStars_WwiseProject\.cache\A5\{A5D1EF20-D389-38B7-6949-150C55143C2C}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Footsteps Sand\18		88296
+	797078184	11	C:\Users\nofla\Documents\IcebergStudio\Games\AmongTheStars\AmongTheStars_WwiseProject\.cache\C6\{C6CABF5C-444D-FEBB-9919-9AB928ABF0A9}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Footsteps Sand\11		88296
+	836452662	19	C:\Users\nofla\Documents\IcebergStudio\Games\AmongTheStars\AmongTheStars_WwiseProject\.cache\CB\{CB717692-CC32-557D-292C-5C7E3F18CD83}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Footsteps Sand\19		110796
+	836780227	07	C:\Users\nofla\Documents\IcebergStudio\Games\AmongTheStars\AmongTheStars_WwiseProject\.cache\A0\{A0FB41E4-0054-BC08-0C13-CFE2670F5C5E}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Footsteps Sand\07		88296
+	932177773	10	C:\Users\nofla\Documents\IcebergStudio\Games\AmongTheStars\AmongTheStars_WwiseProject\.cache\73\{7330032E-A3E9-887E-7642-33CFF4041D6F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Footsteps Sand\10		88296
+	992612138	03	C:\Users\nofla\Documents\IcebergStudio\Games\AmongTheStars\AmongTheStars_WwiseProject\.cache\65\{65350EA2-4DAC-1A83-6699-9A20B327A923}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Footsteps Sand\03		100040
+	1053994617	SavePoint	C:\Users\nofla\Documents\IcebergStudio\Games\AmongTheStars\AmongTheStars_WwiseProject\.cache\97\{9766D774-95EF-7ADF-67BC-543C29904900}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Checkpoint\SavePoint		7310548
+
