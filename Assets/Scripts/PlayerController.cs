@@ -157,7 +157,9 @@ public class PlayerController : MonoBehaviour
             }
 
             rgbd2D.position += direction * _speed;
-            _animator.SetBool("IsWalking", true);
+            
+            if(isGrounded)
+                _animator.SetBool("IsWalking", true);
         }
         else
         {

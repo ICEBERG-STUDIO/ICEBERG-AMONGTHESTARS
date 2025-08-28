@@ -6,33 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="74d03527-145e-4b5a-9b38-146b816abc7a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AmongTheStars/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AmongTheStars/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmongTheStars_WwiseProject/Actor-Mixer Hierarchy/Default Work Unit.wwu" beforeDir="false" afterPath="$PROJECT_DIR$/AmongTheStars_WwiseProject/Actor-Mixer Hierarchy/Default Work Unit.wwu" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AmongTheStars_WwiseProject/AmongTheStars_WwiseProject.nofla.validationcache" beforeDir="false" afterPath="$PROJECT_DIR$/AmongTheStars_WwiseProject/AmongTheStars_WwiseProject.nofla.validationcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmongTheStars_WwiseProject/AmongTheStars_WwiseProject.nofla.wsettings" beforeDir="false" afterPath="$PROJECT_DIR$/AmongTheStars_WwiseProject/AmongTheStars_WwiseProject.nofla.wsettings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmongTheStars_WwiseProject/Events/Default Work Unit.wwu" beforeDir="false" afterPath="$PROJECT_DIR$/AmongTheStars_WwiseProject/Events/Default Work Unit.wwu" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmongTheStars_WwiseProject/GeneratedSoundBanks/Windows/Main.bnk" beforeDir="false" afterPath="$PROJECT_DIR$/AmongTheStars_WwiseProject/GeneratedSoundBanks/Windows/Main.bnk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmongTheStars_WwiseProject/GeneratedSoundBanks/Windows/Main.json" beforeDir="false" afterPath="$PROJECT_DIR$/AmongTheStars_WwiseProject/GeneratedSoundBanks/Windows/Main.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmongTheStars_WwiseProject/GeneratedSoundBanks/Windows/Main.txt" beforeDir="false" afterPath="$PROJECT_DIR$/AmongTheStars_WwiseProject/GeneratedSoundBanks/Windows/Main.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmongTheStars_WwiseProject/SoundBanks/Default Work Unit.wwu" beforeDir="false" afterPath="$PROJECT_DIR$/AmongTheStars_WwiseProject/SoundBanks/Default Work Unit.wwu" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Player.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Player.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Swim.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Swim.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Walk.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Walk.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Checkpoints/Base Arena.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Checkpoints/Base Arena.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Dev/Dev-Noam.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Dev/Dev-Noam.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Wwise_IDs.h" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Wwise_IDs.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Wwise/ScriptableObjects/Event/6EE8D3A5-2885-4240-A422-C44596A2FF27.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wwise/ScriptableObjects/Event/6EE8D3A5-2885-4240-A422-C44596A2FF27.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Wwise/ScriptableObjects/Event/8459B224-7A5E-41A8-AF2B-A2D861969B6F.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wwise/ScriptableObjects/Event/8459B224-7A5E-41A8-AF2B-A2D861969B6F.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Wwise/ScriptableObjects/Event/88DF81EA-04DC-4C44-89B8-5168F3D4C0FC.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wwise/ScriptableObjects/Event/88DF81EA-04DC-4C44-89B8-5168F3D4C0FC.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Wwise/ScriptableObjects/Event/AA981170-65E9-4B6F-86E6-52B605D06AF0.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wwise/ScriptableObjects/Event/AA981170-65E9-4B6F-86E6-52B605D06AF0.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/------CHECKPOINT------.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/------CHECKPOINT------.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/Required/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/Required/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Wwise/ScriptableObjects/Event/DFA3FE9B-29F4-4708-A7D8-AE9592275F1A.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wwise/ScriptableObjects/Event/DFA3FE9B-29F4-4708-A7D8-AE9592275F1A.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
