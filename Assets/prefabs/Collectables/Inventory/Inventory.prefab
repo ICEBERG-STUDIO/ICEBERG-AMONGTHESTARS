@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'USE
+  m_text: 'EQUIP
 
 '
   m_isRightToLeft: 0
@@ -472,7 +472,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 005888ede18a58e4db8d069cfa3007cb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -533,14 +533,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 257ca390e04c79f47b4642321576280a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _imgEquipment: {fileID: 0}
   _imgIcon: {fileID: 1131632383673570308}
   _txtLabel: {fileID: 7382955014506020703}
   _txtCaption: {fileID: 6476512324171317458}
-  _btnsParent: {fileID: 0}
+  _btnsParent: {fileID: 9103937046099685455}
   _nbSlots: 6
   _quantityMax: 5
   _slotDefault: {fileID: 4678003541593452046, guid: 37559930a97cdcb4886afd250dd2407e, type: 3}
-  _slotsParent: {fileID: 0}
+  _slotsParent: {fileID: 9034035226048431996}
   _databaseMgr: {fileID: 7711721563872126909, guid: 9d965e45a62727e4aa27ead19a26919a, type: 3}
 --- !u!1 &4945548824870764842
 GameObject:
@@ -690,7 +691,7 @@ GameObject:
   - component: {fileID: 8861228922521241140}
   - component: {fileID: 3680800945679602503}
   m_Layer: 5
-  m_Name: BODY-BG
+  m_Name: BG-Inventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -713,7 +714,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -13.999996, y: -14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8861228922521241140
 CanvasRenderer:
@@ -787,8 +788,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -89}
-  m_SizeDelta: {x: 200, y: 106.5}
+  m_AnchoredPosition: {x: 0, y: -66}
+  m_SizeDelta: {x: 200, y: 70.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8306996222821110037
 CanvasRenderer:
@@ -818,8 +819,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+  m_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut. \n "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -903,7 +904,7 @@ GameObject:
   - component: {fileID: 6344521868226613333}
   - component: {fileID: 5563968191237036394}
   m_Layer: 5
-  m_Name: BTN-USE
+  m_Name: BTN-EQUIP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1013,7 +1014,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1439011614576412034}
         m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
-        m_MethodName: UseItem
+        m_MethodName: Equip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1054,11 +1055,11 @@ RectTransform:
   - {fileID: 6775982787616015945}
   m_Father: {fileID: 7830461924954981283}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -118.799995, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 500, y: 300}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &8083061758748300315
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,15 +1149,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
+    m_Left: 10
     m_Right: 0
-    m_Top: 0
+    m_Top: 10
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 9.69, y: 10.91}
+  m_CellSize: {x: 80, y: 80}
+  m_Spacing: {x: 10, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &9103937046099685455
@@ -1204,6 +1205,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6775982787616015945}
     m_Modifications:
+    - target: {fileID: 2596159028866885633, guid: 37559930a97cdcb4886afd250dd2407e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596159028866885633, guid: 37559930a97cdcb4886afd250dd2407e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2843772567505437452, guid: 37559930a97cdcb4886afd250dd2407e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1287,6 +1296,30 @@ PrefabInstance:
     - target: {fileID: 4678003541593452046, guid: 37559930a97cdcb4886afd250dd2407e, type: 3}
       propertyPath: m_Name
       value: '[Default]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5616075517254125737, guid: 37559930a97cdcb4886afd250dd2407e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5616075517254125737, guid: 37559930a97cdcb4886afd250dd2407e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539141385168769415, guid: 37559930a97cdcb4886afd250dd2407e, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.912879
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539141385168769415, guid: 37559930a97cdcb4886afd250dd2407e, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4293460223
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121009337966089118, guid: 37559930a97cdcb4886afd250dd2407e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121009337966089118, guid: 37559930a97cdcb4886afd250dd2407e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

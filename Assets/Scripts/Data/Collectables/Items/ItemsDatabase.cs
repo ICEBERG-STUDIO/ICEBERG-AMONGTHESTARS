@@ -5,7 +5,7 @@ using NaughtyAttributes;
 [CreateAssetMenu(fileName = "ItemsDatabase", menuName = "Datas/Collectables/ItemsDatabase")]
 public class ItemsDatabase : ScriptableObject
 {
-    public List<ItemData> itemDatas = new List<ItemData>();
+    public List<ItemData> itemsData = new List<ItemData>();
 
 
 #if UNITY_EDITOR
@@ -14,7 +14,7 @@ public class ItemsDatabase : ScriptableObject
     [Button]
     public void ResetData()
     {
-        foreach (ItemData item in itemDatas)
+        foreach (ItemData item in itemsData)
         {
             item.isEquiped = false;
         }

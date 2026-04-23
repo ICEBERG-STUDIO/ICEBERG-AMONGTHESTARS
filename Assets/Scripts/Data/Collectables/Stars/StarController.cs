@@ -26,7 +26,7 @@ public class StarController : MonoBehaviour, IInteractable
     // Check if id is valid
     private bool IsIDValid()
     {
-        if (_id >= 0 && _id <= _database.starDatas.Count - 1) return true;
+        if (_id >= 0 && _id <= _database.starsData.Count - 1) return true;
 
         Debug.LogError("Star Id must be between 0 and the number of stars - 1.");
         return false;

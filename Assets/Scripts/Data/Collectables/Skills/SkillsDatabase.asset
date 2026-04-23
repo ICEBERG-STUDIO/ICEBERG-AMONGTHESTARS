@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e14d1248f1af574eabac701cf6c9974, type: 3}
+  m_Name: SkillsDatabase
+  m_EditorClassIdentifier: 
+  skillsData:
+  - name: "Fruits des damn\xE9s"
+    genericData:
+      label: damned fruit
+      caption: damned fruit
+      ID: SK-DF
+      sprite: {fileID: -4421588137908033915, guid: d6fe2ddaa66b64b47b25449d51ea5797, type: 3}
+      icon: {fileID: -4421588137908033915, guid: d6fe2ddaa66b64b47b25449d51ea5797, type: 3}
+    isUnlocked: 0
+    controls: Press X
+  - name: Bubble
+    genericData:
+      label: Bubble
+      caption: Bubble
+      ID: SK-BBL
+      sprite: {fileID: 3932370635639870056, guid: 0cc0d94312bc5a747a719e96b5f5248c, type: 3}
+      icon: {fileID: 3932370635639870056, guid: 0cc0d94312bc5a747a719e96b5f5248c, type: 3}
+    isUnlocked: 0
+    controls: Press Y
+  - name: Bubble
+    genericData:
+      label: Bubble
+      caption: Bubble
+      ID: SK-BBL
+      sprite: {fileID: 3932370635639870056, guid: 0cc0d94312bc5a747a719e96b5f5248c, type: 3}
+      icon: {fileID: 3932370635639870056, guid: 0cc0d94312bc5a747a719e96b5f5248c, type: 3}
+    isUnlocked: 1
+    controls: Press Y
+  - name: Bubble
+    genericData:
+      label: Bubble
+      caption: Bubble
+      ID: SK-BBL
+      sprite: {fileID: 3932370635639870056, guid: 0cc0d94312bc5a747a719e96b5f5248c, type: 3}
+      icon: {fileID: 3932370635639870056, guid: 0cc0d94312bc5a747a719e96b5f5248c, type: 3}
+    isUnlocked: 0
+    controls: Press Y
+  - name: Bubble
+    genericData:
+      label: Bubble
+      caption: Bubble
+      ID: SK-BBL
+      sprite: {fileID: 3932370635639870056, guid: 0cc0d94312bc5a747a719e96b5f5248c, type: 3}
+      icon: {fileID: 3932370635639870056, guid: 0cc0d94312bc5a747a719e96b5f5248c, type: 3}
+    isUnlocked: 0
+    controls: Press Y

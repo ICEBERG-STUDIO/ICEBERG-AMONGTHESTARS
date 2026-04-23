@@ -5,7 +5,7 @@ using NaughtyAttributes;
 [CreateAssetMenu(fileName = "StarsDatabase", menuName = "Datas/Collectables/StarsDatabase")]
 public class StarsDatabase : ScriptableObject
 {
-    public List<StarData> starDatas = new List<StarData>();
+    public List<StarData> starsData = new List<StarData>();
 
     #if UNITY_EDITOR
 
@@ -13,7 +13,7 @@ public class StarsDatabase : ScriptableObject
     [Button("Reset Star")]
     public void RemoveAllDrawingsFromDatabase()
     {
-        foreach (StarData star in starDatas)
+        foreach (StarData star in starsData)
         {
             star.isCollected = false;
         }
