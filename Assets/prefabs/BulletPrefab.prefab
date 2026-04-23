@@ -139,7 +139,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeBeforeSelfDestroy: 5
-  DamageToDeal: 25
 --- !u!50 &-3269135817032759710
 Rigidbody2D:
   serializedVersion: 5

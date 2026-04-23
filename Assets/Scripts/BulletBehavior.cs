@@ -5,7 +5,6 @@ using UnityEngine;
 public class BulletBehavior : MonoBehaviour
 {
     [SerializeField] private int _timeBeforeSelfDestroy;
-    [SerializeField] private int DamageToDeal;
     private void Start()
     {
         StartCoroutine(DestroyBullet());
@@ -17,7 +16,6 @@ public class BulletBehavior : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             //Reduce player life
-            collision.gameObject.GetComponent<PlayerController>()?.TakeDamage(DamageToDeal);
             Debug.Log("Player Collision");
             Destroy(gameObject);
         }
