@@ -1,6 +1,9 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using NaughtyAttributes;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,7 +20,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _waterGravityScale = 0.05f;
     [SerializeField] private Animator _animator;
     [SerializeField] private GameObject _spriteObject;
-
+    
+    // Life
+    [SerializeField] private int maxLife;
+    
+    [ProgressBar("Health", nameof(maxLife), EColor.Red)] [SerializeField]
+    private int _currentHealth;
+    
     private int jumpNumber = 0;
     private bool canJump = true;
     private bool wasGroundedLastFrame = true;
@@ -49,12 +58,13 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        _currentHealth = maxLife;
         rgbd2D = GetComponent<Rigidbody2D>();
         normalGravity = rgbd2D.gravityScale;
         normalSpeed = _speed;
         normalJumpForce = _jumpForce;
     }
-
+    
     private void OnDisable()
     {
         Destroy(this);
@@ -82,8 +92,7 @@ public class PlayerController : MonoBehaviour
             ApplyWaterDrag();
         }
     }
-
-
+    
     #region Read Inputs
 
     public void ReadMoveInput(InputAction.CallbackContext context)
@@ -183,6 +192,26 @@ public class PlayerController : MonoBehaviour
     {
         iInteractable.Interact();
         ToggleInteractionKeyUiVisibility();
+    }
+
+    public void TakeDamage(int ReceivedDamage)
+    {
+        _currentHealth -= ReceivedDamage;
+        if (_currentHealth <= 0)
+        {
+            Death();
+        }
+    }
+
+    public void RefillLife()
+    {
+        _currentHealth = maxLife;
+    }
+    
+    public void Death()
+    {
+        PlayerData playerData = SaveSystem.LoadPlayer();
+        transform.position = new Vector3(playerData.data.LastPlayerPosition.LastCheckpointPositionX, playerData.data.LastPlayerPosition.LastCheckpointPositionY, playerData.data.LastPlayerPosition.LastCheckpointPositionZ);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

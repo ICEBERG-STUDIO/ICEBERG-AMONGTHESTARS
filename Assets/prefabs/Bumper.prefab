@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02fe893fa70683848a4ba89ebb2196f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  medusaType: 0
+  bumperType: 0
   BumpForce: 10
   medusaSprite: {fileID: 6255352983401668353}
 --- !u!212 &6255352983401668353
@@ -94,7 +94,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.65882355, g: 0.6117647, b: 0.5647059, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 #if UNITY_EDITOR
@@ -12,6 +13,7 @@ public class Checkpoint : MonoBehaviour, IInteractable
     public CheckpointsData data;
     [SerializeField] private GameObject checkpointUI;
     [SerializeField] private AK.Wwise.Event validateCheckpointEvent;
+    [SerializeField] private UnityEvent interactEvent;
     
 #if UNITY_EDITOR
     string folderPath = "Assets/Checkpoints";
@@ -94,5 +96,7 @@ public class Checkpoint : MonoBehaviour, IInteractable
             data.IsCheckpointFound = true;
         
         validateCheckpointEvent.Post(gameObject);
+        
+        interactEvent.Invoke();
     }
 }
